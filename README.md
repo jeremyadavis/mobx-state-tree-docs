@@ -4,7 +4,7 @@
 
 &lt;/br&gt;
 
-![](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/mobx-state-tree-logo-gradient.svg)
+![](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/mobx-state-tree-logo-gradient.svg)
 
 **mobx-state-tree**
 
@@ -21,7 +21,7 @@ MobX state tree is a community driven project, but is looking for active maintai
 ## Contents
 
 * [Installation](./#installation)
-* [Getting Started](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/getting-started.md)
+* [Getting Started](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/getting-started.md)
 * [Talks & blogs](./#talks--blogs)
 * [Philosophy & Overview](./#philosophy--overview)
 * [Examples](./#examples)
@@ -43,9 +43,9 @@ MobX state tree is a community driven project, but is looking for active maintai
 * [Api overview](./#api-overview)
 * [Tips](./#tips)
 * [FAQ](./#FAQ)
-* [Full Api Docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md)
-* [Built-in / example middlewares](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/packages/mst-middlewares/README.md)
-* [Changelog](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/changelog.md)
+* [Full Api Docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md)
+* [Built-in / example middlewares](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/packages/mst-middlewares/README.md)
+* [Changelog](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/changelog.md)
 
 ## Installation
 
@@ -124,7 +124,7 @@ The type information is designed in such a way that it is used both at design- a
 
 _Runtime type error_
 
-![typescript error](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/tserror.png)
+![typescript error](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/tserror.png)
 
 _Designtime type error_
 
@@ -134,11 +134,11 @@ Although mutable sounds scary to some, fear not: actions have many interesting p
 
 Moreover, because changes can be detected on a fine grained level, JSON patches are supported out of the box. Simply subscribing to the patch stream of a tree is another way to sync diffs with, for example, back-end servers or other clients \([example](https://github.com/mobxjs/mobx-state-tree/blob/master/packages/mst-example-boxes/src/stores/socket.js)\).
 
-![patches](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/patches.png)
+![patches](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/patches.png)
 
 Since MST uses MobX behind the scenes, it integrates seamlessly with [mobx](https://mobx.js.org) and [mobx-react](https://github.com/mobxjs/mobx-react). See also this [egghead.io lesson: Render mobx-state-tree Models in React](https://egghead.io/lessons/react-render-mobx-state-tree-models-in-react) But even cooler: because it supports snapshots, middleware and replayable actions out of the box, it is even possible to replace a Redux store and reducer with a MobX state tree. This makes it even possible to connect the Redux devtools to MST. See the [Redux / MST TodoMVC example](https://github.com/mobxjs/mobx-state-tree/blob/4c2b19ec4a6a8d74064e4b8a87c0f8b46e97e621/examples/redux-todomvc/src/index.js#L6).
 
-![devtools](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/reduxdevtools.png)
+![devtools](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/reduxdevtools.png)
 
 Finally, MST has built-in support for references, identifiers, dependency injection, change recording and circular type definitions \(even across files\). Even fancier: it analyses liveliness of objects, failing early when you try to access accidentally cached information! \(More on that later\)
 
@@ -160,7 +160,7 @@ store.removeTodo(0)
 // throws exception in one second for using an stale object!
 ```
 
-Despite all that, you will see that the [API](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md) is pretty straightforward!
+Despite all that, you will see that the [API](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md) is pretty straightforward!
 
 Another way to look at mobx-state-tree is to consider it, as argued by Daniel Earwicker, to be ["React, but for data"](http://danielearwicker.github.io/json_mobx_Like_React_but_for_Data_Part_2_.html). Like React, MST consists of composable components, called _models_, which captures a small piece of state. They are instantiated from props \(snapshots\) and after that manage and protect their own internal state \(using actions\). Moreover, when applying snapshots, tree nodes are reconciled as much as possible. There is even a context-like mechanism, called environments, to pass information to deep descendants.
 
@@ -370,15 +370,15 @@ Actions are replayable and are therefore constrained in several ways:
 
 Useful methods:
 
-* [`onAction`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#onaction) listens to any action that is invoked on the model or any of its descendants.
-* [`addMiddleware`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#addmiddleware) listens to any action that is invoked on the model or any of its descendants.
-* [`applyAction`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#applyaction) invokes an action on the model according to the given action description
+* [`onAction`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#onaction) listens to any action that is invoked on the model or any of its descendants.
+* [`addMiddleware`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#addmiddleware) listens to any action that is invoked on the model or any of its descendants.
+* [`applyAction`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#applyaction) invokes an action on the model according to the given action description
 
 **Asynchronous actions**
 
 [egghead.io lesson 12: Defining Asynchronous Processes Using Flow](https://egghead.io/lessons/react-defining-asynchronous-processes-using-flow)
 
-Asynchronous actions have first class support in MST and are described in more detail [here](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/async-actions.md#asynchronous-actions-and-middleware). Asynchronous actions are written by using generators and always return a promise. For a real working example see the [bookshop sources](https://github.com/mobxjs/mobx-state-tree/blob/adba1943af263898678fe148a80d3d2b9f8dbe63/examples/bookshop/src/stores/BookStore.js#L25). A quick example to get the gist:
+Asynchronous actions have first class support in MST and are described in more detail [here](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/async-actions.md#asynchronous-actions-and-middleware). Asynchronous actions are written by using generators and always return a promise. For a real working example see the [bookshop sources](https://github.com/mobxjs/mobx-state-tree/blob/adba1943af263898678fe148a80d3d2b9f8dbe63/examples/bookshop/src/stores/BookStore.js#L25). A quick example to get the gist:
 
 ```javascript
 import { types, flow } from "mobx-state-tree"
@@ -408,7 +408,7 @@ someModel.actions(self => {
 
 The difference between action listeners and middleware is: Middleware can intercept the action that is about to be invoked, modify arguments, return types etc. Action listeners cannot intercept, and are only notified. Action listeners receive the action arguments in a serializable format, while middleware receives the raw arguments. \(`onAction` is actually just a built-in middleware\)
 
-For more details on creating middleware, see the [docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/middleware.md)
+For more details on creating middleware, see the [docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/middleware.md)
 
 **Disabling protected mode**
 
@@ -545,7 +545,7 @@ console.log(storeInstance.selectedTodo.title)
 * The identifier property of an object cannot be modified after initialization
 * Each identifier / type combination should be unique within the entire tree
 * Identifiers are used to reconcile items inside arrays and maps - wherever possible - when applying snapshots
-* The `map.put()` method can be used to simplify adding objects that have identifiers to [maps](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#typesmap)
+* The `map.put()` method can be used to simplify adding objects that have identifiers to [maps](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#typesmap)
 * The primary goal of identifiers is not validation, but reconciliation and reference resolving. For this reason identifiers cannot be defined or updated after creation. If you want to check if some value just looks as an identifier, without providing the above semantics; use something like: `types.refinement(types.string, v => v.match(/someregex/))`
 
 _Tip: If you know the format of the identifiers in your application, leverage_ `types.refinement` _to actively check this, for example the following definition enforces that identifiers of_ `Car` _always start with the string \`Car_\`:\_
@@ -562,7 +562,7 @@ References are defined by mentioning the type they should resolve to. The target
 
 **Customizable references**
 
-The default implementation uses the `identifier` cache to resolve references \(See [`resolveIdentifier`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#resolveIdentifier)\). However, it is also possible to override the resolve logic, and provide your own custom resolve logic. This also makes it possible to, for example, trigger a data fetch when trying to resolve the reference \([example](https://github.com/mobxjs/mobx-state-tree/blob/cdb3298a5621c3229b3856bb469327da6deb31ea/packages/mobx-state-tree/test/reference-custom.ts#L150)\).
+The default implementation uses the `identifier` cache to resolve references \(See [`resolveIdentifier`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#resolveIdentifier)\). However, it is also possible to override the resolve logic, and provide your own custom resolve logic. This also makes it possible to, for example, trigger a data fetch when trying to resolve the reference \([example](https://github.com/mobxjs/mobx-state-tree/blob/cdb3298a5621c3229b3856bb469327da6deb31ea/packages/mobx-state-tree/test/reference-custom.ts#L150)\).
 
 Example:
 
@@ -657,7 +657,7 @@ addMiddleware(storeInstance, (call, next) => {
 })
 ```
 
-A more extensive middleware example can be found in this [code sandbox](https://codesandbox.io/s/mQrqy8j73). For more details on creating middleware and the exact specification of middleware events, see the [docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/middleware.md)
+A more extensive middleware example can be found in this [code sandbox](https://codesandbox.io/s/mQrqy8j73). For more details on creating middleware and the exact specification of middleware events, see the [docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/middleware.md)
 
 Finally, it is not only possible to be notified about snapshots, patches or actions; it is also possible to re-apply them by using `applySnapshot`, `applyPatch` or `applyAction`!
 
@@ -796,7 +796,7 @@ store.todos[0].setTitle("Grab coffee")
 
 [egghead.io lesson 11: More mobx-state-tree Types: map, literal, union, and enumeration](https://egghead.io/lessons/react-more-mobx-state-tree-types-map-literal-union-and-enumeration) [egghead.io lesson 17: Create Dynamic Types and use Type Composition to Extract Common Functionality](https://egghead.io/lessons/react-create-dynamic-types-and-use-type-composition-to-extract-common-functionality)
 
-These are the types available in MST. All types can be found in the `types` namespace, e.g. `types.string`. See [Api Docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md) for examples.
+These are the types available in MST. All types can be found in the `types` namespace, e.g. `types.string`. See [Api Docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md) for examples.
 
 ### Complex types
 
@@ -880,57 +880,57 @@ All hooks can be defined multiple times and can be composed automatically.
 
 ## Api overview
 
-See the [full API docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md) for more details.
+See the [full API docs](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md) for more details.
 
 | signature |  |
 | :--- | :--- |
-| [`addDisposer(node, () => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#adddisposer) | Function to be invoked whenever the target node is to be destroyed |
-| [`addMiddleware(node, middleware: (actionDescription, next) => any, includeHooks)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#addmiddleware) | Attaches middleware to a node. See [middleware](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/middleware.md). Returns disposer. |
-| [`applyAction(node, actionDescription)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#applyaction) | Replays an action on the targeted node |
-| [`applyPatch(node, jsonPatch)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#applypatch) | Applies a JSON patch, or array of patches, to a node in the tree |
-| [`applySnapshot(node, snapshot)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#applysnapshot) | Updates a node with the given snapshot |
-| [`createActionTrackingMiddleware`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#createactiontrackingmiddleware) | Utility to make writing middleware that tracks async actions less cumbersome |
-| [`clone(node, keepEnvironment?: true \| false \| newEnvironment)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#clone) | Creates a full clone of the given node. By default preserves the same environment |
-| [`decorate(handler, function)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#decorate) | Attaches middleware to a specific action \(or flow\) |
-| [`destroy(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#destroy) | Kills `node`, making it unusable. Removes it from any parent in the process |
-| [`detach(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#detach) | Removes `node` from its current parent, and lets it live on as standalone tree |
-| [`flow(generator)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#flow) | creates an asynchronous flow based on a generator function |
-| [`getChildType(node, property?)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getchildtype) | Returns the declared type of the given `property` of `node`. For arrays and maps `property` can be omitted as they all have the same type |
-| [`getEnv(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getenv) | Returns the environment of `node`, see [environments](./#environments) |
-| [`getParent(node, depth=1)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getparent) | Returns the intermediate parent of the `node`, or a higher one if `depth > 1` |
-| [`getParentOfType(node, type)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getparentoftype) | Return the first parent that satisfies the provided type |
-| [`getPath(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getpath) | Returns the path of `node` in the tree |
-| [`getPathParts(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getpathparts) | Returns the path of `node` in the tree, unescaped as separate parts |
-| [`getRelativePath(base, target)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getrelativepath) | Returns the short path, which one could use to walk from node `base` to node `target`, assuming they are in the same tree. Up is represented as `../` |
-| [`getRoot(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getroot) | Returns the root element of the tree containing `node` |
-| [`getIdentifier(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getidentifier) | Returns the identifier of the given element |
-| [`getSnapshot(node, applyPostProcess)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getsnapshot) | Returns the snapshot of the `node`. See [snapshots](./#snapshots) |
-| [`getType(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#gettype) | Returns the type of `node` |
-| [`hasParent(node, depth=1)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#hasparent) | Returns `true` if `node` has a parent at `depth` |
-| [`hasParentOfType(node, type)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#hasparentoftype) | Returns `true` if the `node` has a parent that satisfies the provided type |
-| [`isAlive(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#isalive) | Returns `true` if `node` is alive |
-| [`isStateTreeNode(value)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#isstatetreenode) | Returns `true` if `value` is a node of a mobx-state-tree |
-| [`isProtected(value)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#isprotected) | Returns `true` if the given node is protected, see [actions](./#actions) |
-| [`isRoot(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#isroot) | Returns true if `node` has no parents |
-| [`joinJsonPath(parts)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#joinjsonpath) | Joins and escapes the given path `parts` into a JSON path |
-| [`onAction(node, (actionDescription) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#onaction) | A built-in middleware that calls the provided callback with an action description upon each invocation. Returns disposer |
-| [`onPatch(node, (patch) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#onpatch) | Attach a JSONPatch listener, that is invoked for each change in the tree. Returns disposer |
-| [`onSnapshot(node, (snapshot) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#onsnapshot) | Attach a snapshot listener, that is invoked for each change in the tree. Returns disposer |
-| [`process(generator)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#process) | `DEPRECATED` – replaced with [flow](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#flow) |
-| [`protect(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#protect) | Protects an unprotected tree against modifications from outside actions |
-| [`recordActions(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#recordactions) | Creates a recorder that listens to all actions in `node`. Call `.stop()` on the recorder to stop this, and `.replay(target)` to replay the recorded actions on another tree |
-| [`recordPatches(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#recordpatches) | Creates a recorder that listens to all patches emitted by the node. Call `.stop()` on the recorder to stop this, and `.replay(target)` to replay the recorded patches on another tree |
-| [`getMembers(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#getMembers) | Returns the model name, properties, actions, views, volatiles |
-| [`resolve(node, path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#resolve) | Resolves a `path` \(json path\) relatively to the given `node` |
-| [`resolveIdentifier(type, target, identifier)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#resolveidentifier) | resolves an identifier of a given type in a model tree |
-| [`resolvePath(target, path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#resolvepath) | resolves a JSON path, starting at the specified target |
-| [`splitJsonPath(path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#splitjsonpath) | Splits and unescapes the given JSON `path` into path parts |
-| [`typecheck(type, value)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#typecheck) | Typechecks a value against a type. Throws on errors. Use this if you need typechecks even in a production build. |
-| [`tryResolve(node, path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#tryresolve) | Like `resolve`, but just returns `null` if resolving fails at any point in the path |
-| [`unprotect(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#unprotect) | Unprotects `node`, making it possible to directly modify any value in the subtree, without actions |
-| [`walk(startNode, (node) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#walk) | Performs a depth-first walk through a tree |
-| [`escapeJsonPath(path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#escapejsonpath) | escape special characters in an identifier, according to [http://tools.ietf.org/html/rfc6901](http://tools.ietf.org/html/rfc6901) |
-| [`unescapeJsonPath(path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/API.md#unescapejsonpath) | escape special characters in an identifier, according to [http://tools.ietf.org/html/rfc6901](http://tools.ietf.org/html/rfc6901) |
+| [`addDisposer(node, () => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#adddisposer) | Function to be invoked whenever the target node is to be destroyed |
+| [`addMiddleware(node, middleware: (actionDescription, next) => any, includeHooks)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#addmiddleware) | Attaches middleware to a node. See [middleware](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/middleware.md). Returns disposer. |
+| [`applyAction(node, actionDescription)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#applyaction) | Replays an action on the targeted node |
+| [`applyPatch(node, jsonPatch)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#applypatch) | Applies a JSON patch, or array of patches, to a node in the tree |
+| [`applySnapshot(node, snapshot)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#applysnapshot) | Updates a node with the given snapshot |
+| [`createActionTrackingMiddleware`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#createactiontrackingmiddleware) | Utility to make writing middleware that tracks async actions less cumbersome |
+| [`clone(node, keepEnvironment?: true \| false \| newEnvironment)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#clone) | Creates a full clone of the given node. By default preserves the same environment |
+| [`decorate(handler, function)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#decorate) | Attaches middleware to a specific action \(or flow\) |
+| [`destroy(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#destroy) | Kills `node`, making it unusable. Removes it from any parent in the process |
+| [`detach(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#detach) | Removes `node` from its current parent, and lets it live on as standalone tree |
+| [`flow(generator)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#flow) | creates an asynchronous flow based on a generator function |
+| [`getChildType(node, property?)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getchildtype) | Returns the declared type of the given `property` of `node`. For arrays and maps `property` can be omitted as they all have the same type |
+| [`getEnv(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getenv) | Returns the environment of `node`, see [environments](./#environments) |
+| [`getParent(node, depth=1)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getparent) | Returns the intermediate parent of the `node`, or a higher one if `depth > 1` |
+| [`getParentOfType(node, type)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getparentoftype) | Return the first parent that satisfies the provided type |
+| [`getPath(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getpath) | Returns the path of `node` in the tree |
+| [`getPathParts(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getpathparts) | Returns the path of `node` in the tree, unescaped as separate parts |
+| [`getRelativePath(base, target)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getrelativepath) | Returns the short path, which one could use to walk from node `base` to node `target`, assuming they are in the same tree. Up is represented as `../` |
+| [`getRoot(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getroot) | Returns the root element of the tree containing `node` |
+| [`getIdentifier(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getidentifier) | Returns the identifier of the given element |
+| [`getSnapshot(node, applyPostProcess)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getsnapshot) | Returns the snapshot of the `node`. See [snapshots](./#snapshots) |
+| [`getType(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#gettype) | Returns the type of `node` |
+| [`hasParent(node, depth=1)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#hasparent) | Returns `true` if `node` has a parent at `depth` |
+| [`hasParentOfType(node, type)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#hasparentoftype) | Returns `true` if the `node` has a parent that satisfies the provided type |
+| [`isAlive(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#isalive) | Returns `true` if `node` is alive |
+| [`isStateTreeNode(value)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#isstatetreenode) | Returns `true` if `value` is a node of a mobx-state-tree |
+| [`isProtected(value)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#isprotected) | Returns `true` if the given node is protected, see [actions](./#actions) |
+| [`isRoot(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#isroot) | Returns true if `node` has no parents |
+| [`joinJsonPath(parts)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#joinjsonpath) | Joins and escapes the given path `parts` into a JSON path |
+| [`onAction(node, (actionDescription) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#onaction) | A built-in middleware that calls the provided callback with an action description upon each invocation. Returns disposer |
+| [`onPatch(node, (patch) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#onpatch) | Attach a JSONPatch listener, that is invoked for each change in the tree. Returns disposer |
+| [`onSnapshot(node, (snapshot) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#onsnapshot) | Attach a snapshot listener, that is invoked for each change in the tree. Returns disposer |
+| [`process(generator)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#process) | `DEPRECATED` – replaced with [flow](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#flow) |
+| [`protect(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#protect) | Protects an unprotected tree against modifications from outside actions |
+| [`recordActions(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#recordactions) | Creates a recorder that listens to all actions in `node`. Call `.stop()` on the recorder to stop this, and `.replay(target)` to replay the recorded actions on another tree |
+| [`recordPatches(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#recordpatches) | Creates a recorder that listens to all patches emitted by the node. Call `.stop()` on the recorder to stop this, and `.replay(target)` to replay the recorded patches on another tree |
+| [`getMembers(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#getMembers) | Returns the model name, properties, actions, views, volatiles |
+| [`resolve(node, path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#resolve) | Resolves a `path` \(json path\) relatively to the given `node` |
+| [`resolveIdentifier(type, target, identifier)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#resolveidentifier) | resolves an identifier of a given type in a model tree |
+| [`resolvePath(target, path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#resolvepath) | resolves a JSON path, starting at the specified target |
+| [`splitJsonPath(path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#splitjsonpath) | Splits and unescapes the given JSON `path` into path parts |
+| [`typecheck(type, value)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#typecheck) | Typechecks a value against a type. Throws on errors. Use this if you need typechecks even in a production build. |
+| [`tryResolve(node, path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#tryresolve) | Like `resolve`, but just returns `null` if resolving fails at any point in the path |
+| [`unprotect(node)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#unprotect) | Unprotects `node`, making it possible to directly modify any value in the subtree, without actions |
+| [`walk(startNode, (node) => void)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#walk) | Performs a depth-first walk through a tree |
+| [`escapeJsonPath(path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#escapejsonpath) | escape special characters in an identifier, according to [http://tools.ietf.org/html/rfc6901](http://tools.ietf.org/html/rfc6901) |
+| [`unescapeJsonPath(path)`](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/API.md#unescapejsonpath) | escape special characters in an identifier, according to [http://tools.ietf.org/html/rfc6901](http://tools.ietf.org/html/rfc6901) |
 
 A _disposer_ is a function that cancels the effect it was created for.
 
@@ -1072,7 +1072,7 @@ If an object is reconciled, the consequence is that localState is preserved and 
 
 #### Creating async flows
 
-See [creating asynchronous flow](https://github.com/epodgaetskiy/mobx-state-tree/tree/8eaf5958eef84aa7f75206d246c018e63fbfe755/docs/docs/async-actions.md).
+See [creating asynchronous flow](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/async-actions.md).
 
 #### Using mobx and mobx-state-tree together
 
