@@ -43,7 +43,7 @@ The _properties_ argument is a key-value set where each key indicates the introd
 3. A [computed property](https://mobx.js.org/refguide/computed-decorator.html), see `// 6`. Computed properties are tracked and memoized by MobX. Computed properties will not be stored in snapshots or emit patch events. It is possible to provide a setter for a computed property as well. A setter should always invoke an action.
 4. A view function \(see `// 7`\). A view function can, unlike computed properties, take arbitrary arguments. It won't be memoized, but its value can be tracked by MobX nonetheless. View functions are not allowed to change the model, but should rather be used to retrieve information from the model.
 
-_Tip: `(self) => ({ action1() { }, action2() { }})` is ES6 syntax for `function (self) { return { action1: function() { }, action2: function() { } }}`, in other words; it's short way of directly returning an object literal. For that reason a comma between each member of a model is mandatory, unlike classes which are syntactically a totally different concept._
+_Tip:_ `(self) => ({ action1() { }, action2() { }})` _is ES6 syntax for_ `function (self) { return { action1: function() { }, action2: function() { } }}`_, in other words; it's short way of directly returning an object literal. For that reason a comma between each member of a model is mandatory, unlike classes which are syntactically a totally different concept._
 
 `types.model` creates a chainable model type, where each chained method produces a new type:
 

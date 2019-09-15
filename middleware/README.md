@@ -8,5 +8,3 @@ MST ships with a small set of [pre-built / example middlewares](https://mobx-sta
 
 Custom middleware example: [SandBox example](https://codesandbox.io/s/88jrqlzm1l)
 
-
-

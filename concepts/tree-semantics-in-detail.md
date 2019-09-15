@@ -17,7 +17,7 @@ MST trees have very specific semantics. These semantics purposefully constrain w
 
 These egghead.io lessons nicely leverage the specific semantics of MST trees:
 
-[egghead.io lesson 6: Build Forms with React to Edit mobx-state-tree Models](https://egghead.io/lessons/react-build-forms-with-react-to-edit-mobx-state-tree-models) 
+[egghead.io lesson 6: Build Forms with React to Edit mobx-state-tree Models](https://egghead.io/lessons/react-build-forms-with-react-to-edit-mobx-state-tree-models)
 
 [egghead.io lesson 7: Remove Model Instances from the Tree](https://egghead.io/lessons/react-remove-model-instances-from-the-tree) [egghead.io lesson 8: Create an Entry Form to Add Models to the State Tree](https://egghead.io/lessons/react-create-an-entry-form-to-add-models-to-the-state-tree)
 

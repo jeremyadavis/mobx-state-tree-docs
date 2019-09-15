@@ -7,7 +7,7 @@ Asynchronous actions are a first class concept in Mobx-State-Tree. Modelling an 
 
 The recommended approach is to use _generators_, for reasons mentioned below. But let's take a look at modelling asynchronous actions as a set of actions first.
 
-### Using separate actions
+## Using separate actions
 
 MST doesn't allow changing state outside actions \(except when the tree is unprotected\). This means that each step in an asynchronous flow that needs to actually change the model needs to become a separate action. For example:
 
@@ -45,7 +45,7 @@ This approach works fine and has great type inference, but comes with a few down
 2. Each step of the flow is exposed as action to the outside world. In the above example, one could \(but shouldn't\) directly invoke `store.fetchProjectsSuccess([])`
 3. Middleware cannot distinguish the flow initiating action from the handler actions. This means that actions like `fetchProjectsSuccess` will become part of the recorded action list, although you probably never want to replay it \(as replaying `fetchProjects` itself will cause the handler actions to be fired in the end\).
 
-### Using generators
+## Using generators
 
 Generators might sound scary, but they are very suitable for expressing asynchronous flows. The above example looks as follows when using generators:
 
@@ -97,7 +97,7 @@ Using generators requires Promises and generators to be available. Promises can 
 
 To see how `flows`s can be monitored and detected in middleware, see the [middleware docs](https://mobx-state-tree.gitbook.io/docs/middleware).
 
-### What about async / await?
+## What about async / await?
 
 Async/await can only be used in trees that are unprotected. Async / await is not flexible enough to allow MST to wrap asynchronous steps in actions automatically, as is done for the generator functions. Luckily, using generators in combination with `flow` is very similar to `async / await`: `async function() {}` becomes `flow(function* () {})`, and `await promise` becomes `yield promise`, and further behavior should be the same.
 

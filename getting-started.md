@@ -2,23 +2,23 @@
 
 This tutorial will introduce you to the basics of mobx-state-tree \(MST\) by building a TODO application. This todo application will have the ability to assign todo's to a user.
 
-### Prerequisites
+## Prerequisites
 
 This tutorial assumes that you know the basics of how to use React. If you don't know what React is and how to use it, you may wish to read first [this tutorial](https://facebook.github.io/react/tutorial/tutorial.html).
 
-#### Do I need to learn MobX?
+### Do I need to learn MobX?
 
 MST is based heavily on MobX. A basic understanding of the MobX library will help when dealing with complex situations and how to connect the data with React components. If you don't have MobX experience, don't worry, working with MST does not require any MobX API knowledge.
 
-### How to follow this tutorial
+## How to follow this tutorial
 
 You can write the code for this tutorial in the browser, using the codesandbox playground, or in your preferred code editor \(e.g. VSCode\).
 
-#### Writing code in the browser
+### Writing code in the browser
 
 For each example you'll fine a codesandbox playground link. You can start from the playgrond of each point and manually progress to the next tutorial step by using it! If you're stuck, feel free to have a sneak peak from the next playground link! :\)
 
-#### Writing code in the editor
+### Writing code in the editor
 
 Setting up the whole environment for a React project involve transpilers, bundlers, linters, etc... and setting them up may become very tedious and not fun. Thanks to `create-react-app` setting up all those tools became easy as typing a couple of lines in your terminal.
 
@@ -35,13 +35,13 @@ npm install mobx mobx-react mobx-state-tree --save
 
 Then you can run `npm run start` and a basic React page will show up. You can now start editing all you need!
 
-### Overview
+## Overview
 
 mobx-state-tree is a state container that combines the simplicity and ease of mutable data with the traceability of immutable data and the reactiveness and performance of observable data.
 
 If this sentence confused you, don't worry. We will dive together and explore what it means step by step.
 
-### Getting Started
+## Getting Started
 
 When building applications with MST, the first exercise that will help you building your application is thinking which is the minimal set of entities and their relative attributes of our application.
 
@@ -58,7 +58,7 @@ Todo
 * name
 * done
 
-### Creating our first model
+## Creating our first model
 
 Central to MST \(mobx-state-tree\) is the concept of a living tree. The tree consists of mutable, but strictly protected objects enriched with runtime type information. In other words; each tree has a shape \(type information\) and state \(data\). From this living tree, immutable, structurally shared, snapshots are generated automatically.
 
@@ -83,7 +83,7 @@ const User = types.model({
 
 The code above will create two types, a User and a Todo type, but as we said before, a tree model in MST consists of type information \(and we just saw how to define them\) and state \(the instance data\). So how do we create an instance of the Todo and User type?
 
-### Creating model instances \(tree nodes\)
+## Creating model instances \(tree nodes\)
 
 That could be easily done by calling .create\(\) on the User and Todo type we just defined.
 
@@ -118,7 +118,7 @@ console.log("Eat TODO:", eat.toJSON()) // => will print {name: "eat", done: fals
 
 [View sample in playground](https://codesandbox.io/s/ymqpj71oj9)
 
-### Meeting types
+## Meeting types
 
 When playing with this feature and passing in values to the create method, you may encounter an error like this:
 
@@ -176,7 +176,7 @@ const store = RootStore.create({
 
 [View sample in playground](https://codesandbox.io/s/5wyx1xvvj4)
 
-### Modifying data
+## Modifying data
 
 MST tree nodes \(model instances\) can be modified using actions. Actions are colocated with your types and can be easily defined by declaring `.actions` over your model type and passing it a functions that accept the model instance and returns an object with the functions that modify that tree node.
 
@@ -227,7 +227,7 @@ store.todos.get(1).toggle()
 
 [View sample in playground](https://codesandbox.io/s/928l6pw7pr)
 
-### Snapshots are awesome!
+## Snapshots are awesome!
 
 Dealing with mutable data and objects makes it easy to change data on the fly, but on the other hand it makes testing hard. Immutable data makes that very easy. Is there a way to have the best of both worlds? Nature is a great example of that. Beings are living and mutable, but we may eternalize nature's beauty by taking awesome snapshots. Can we do the same with the state of our application?
 
@@ -252,7 +252,7 @@ Note: The `.toJSON()` you have used before in the tutorial is just a shortcut to
 
 Because the nature of state is mutable, a snapshot will be emitted whenever the state is mutated! To listen to those new snapshot, you can use `onSnapshot(store, snapshot => console.log(snapshot))` to log them as they are emitted!
 
-### From snapshot to model
+## From snapshot to model
 
 As we just saw, getting a snapshot from a model instance is pretty easy, but wouldn't it be neat to be able to restore a model from a snapshot? The good news is that you can!
 
@@ -288,7 +288,7 @@ applySnapshot(store, {
 
 [View sample in playground](https://codesandbox.io/s/xjm99kkopp)
 
-### Time travel
+## Time travel
 
 The ability of getting snapshots and applying them makes implementing time travel really easy in user-land. What you need to do is basically listen for snapshots, store them and reapply them to enable time travel!
 
@@ -320,7 +320,7 @@ export function nextState() {
 }
 ```
 
-### Getting to the UI
+## Getting to the UI
 
 MST loves MobX, and is fully compatible with it's autorun, reaction, observe, etc! You can use the mobx-react package to connect a MST store to a React component! More details can be found on the mobx-react package documentation, but keep in mind that any view engine could be easily integrated with MST, just listen to onSnapshot and update accordingly!
 
@@ -339,7 +339,7 @@ const App = observer(props => <div>
 
 [View sample in playground](https://codesandbox.io/s/4rzvkx6z77)
 
-### Improving render performance
+## Improving render performance
 
 If you have the React DevTools installed, using the "Highlight Updates" check you will see that the entire application will re-render whenever a todo is toggled or name is changed. That's a shame, as this can cause performance issues if there are a lots of todos in our list!
 
@@ -366,7 +366,7 @@ Basically each `observer` declaration will enable the React component to only re
 
 Now that we have split the rendering logic out into a separate observer, the Todo will re-render only if that todo changes, and App will re-render only if a new todo is added/removed since it's observing only the length of the todo map.
 
-### Computed properties
+## Computed properties
 
 We now want to display the count of TODOs to be done in our application, to help users know how many TODOs are left. That means that we need to count the number of TODOs with "done" set to false. To do this, we just need to modify the RootStore declaration, and add a getter property over our model by calling `.views` that will count how many TODOs are left.
 
@@ -416,7 +416,7 @@ const AppView = observer(props =>
 
 If you're console.log your snapshot, you'll notice that computed properties won't appear in snapshots. Thats fine and intended, since those properties must be computed over the other properties of the tree, they can be reproduced by knowing just their definition. For the same reason, if you provide a computed value in a snapshot you'll end up with an error when you attempt to apply it.
 
-### Model views
+## Model views
 
 You may need to use the list of todos filtered by completion in various locations in your application. Even if accessing the list of todos and filter them every time may look a viable solution, if the filter logic is complex or changes over time you'll find that it's not a viable solution.
 
@@ -449,7 +449,7 @@ const RootStore = types.model({
 
 Notice that the `getTodosWhereDoneIs` view can also be used outside of its model, for example it can be used inside views.
 
-### Going further: References
+## Going further: References
 
 Ok, the basics of our TODO application are done! But as I said when starting this tutorial, we want to be able to provide assignees for each of our todos!
 
@@ -485,7 +485,7 @@ Now we need to change our Todo model to store the user assigned to that task. Yo
 
 MST supports references out of the box. That means that we can define a "user" attribute on the Todo model, that's a reference to a User. When getting the snapshot, the value of that attribute will be the identifier of the User, when reading, it will resolve to the correct instance of the User model and when setting you could provide either the User model instance or the User identifier.
 
-#### Identifiers
+### Identifiers
 
 In order to make our reference work, we first need to set up identifier in the targetted model Type of the reference. We need to tell MST which attribute is the identifier of the user.
 
@@ -538,7 +538,7 @@ const store = RootStore.create({
 
 [View sample in playground](https://codesandbox.io/s/mzvx6o7r0j)
 
-#### How to define the reference
+### How to define the reference
 
 The reference we are looking for can be easily defined as `types.reference(User)`. Sometimes this can lead to circular references that may use a type before it's declared. To postpone the resolution of the type, you can use `types.late(() => User)` instead of just `User` and that will hoist the type and defer its evaluation. The user assignee for the Todo could also be omitted, so we will use `types.maybe(...)` to allow the user property to be null and be initialized as null.
 
@@ -561,7 +561,7 @@ const Todo = types.model({
 
 [View sample in playground](https://codesandbox.io/s/mzvx6o7r0j)
 
-#### Setting a reference value
+### Setting a reference value
 
 The reference value can be set by providing either the identifier or a model instance. First of all, we need to define an action that will allow you to change the user of the todo.
 
@@ -624,7 +624,7 @@ const AppView = observer(props =>
 
 [View sample in playground](https://codesandbox.io/s/mzvx6o7r0j)
 
-### References are safe!
+## References are safe!
 
 One neat feature of references, is that they will throw if you accidentally remove a model that is required by a computed! If you try to remove a user that's used by a reference, you'll get something like this:
 
@@ -632,7 +632,7 @@ One neat feature of references, is that they will throw if you accidentally remo
 [mobx-state-tree] Failed to resolve reference of type <late>: '1' (in: /todos/1/user)
 ```
 
-### Next up
+## Next up
 
 In part 2 of this tutorial, we will discover how to use MST lifecycle hooks and local state to fetch user data from an XHR endpoint, and see how environments will help dealing with dependency injection of the parameters needed to fetch our endpoint. We will implement auto-save using mobx helpers and learn more about patches and actions event streams.
 

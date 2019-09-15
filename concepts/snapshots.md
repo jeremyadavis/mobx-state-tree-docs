@@ -2,7 +2,7 @@
 
 [egghead.io lesson 3: Test mobx-state-tree Models by Recording Snapshots or Patches](https://egghead.io/lessons/react-test-mobx-state-tree-models-by-recording-snapshots-or-patches)
 
-[egghead.io lesson 9: Store Store in Local Storage](https://egghead.io/lessons/react-store-store-in-local-storage) 
+[egghead.io lesson 9: Store Store in Local Storage](https://egghead.io/lessons/react-store-store-in-local-storage)
 
 [egghead.io lesson 16: Automatically Send Changes to the Server by Using onSnapshot](https://egghead.io/lessons/react-automatically-send-changes-to-the-server-by-using-onsnapshot)
 
