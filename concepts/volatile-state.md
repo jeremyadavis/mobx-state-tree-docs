@@ -89,5 +89,3 @@ The object that is returned from the `volatile` initializer function can contain
 6. Changes in volatile props won't show up in the patch or snapshot stream
 7. It is currently not supported to define getters / setters in the object returned by `volatile`
 
-
-

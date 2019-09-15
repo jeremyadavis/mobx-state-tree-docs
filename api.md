@@ -2,7 +2,7 @@
 
 _This reference guide lists all methods exposed by MST. Contributions like linguistic improvements, adding more details to the descriptions or additional examples are highly appreciated! Please note that the docs are generated from source. Most methods are declared in the_ [_mst-operations.ts_](https://github.com/mobxjs/mobx-state-tree/blob/master/src/core/mst-operations.ts) _file._
 
-### addDisposer
+## addDisposer
 
 Use this utility to register a function that should be called whenever the targeted state tree node is destroyed. This is a useful alternative to managing cleanup methods yourself using the `beforeDestroy` hook.
 
@@ -29,7 +29,7 @@ const Todo = types.model({
 }))
 ```
 
-### addMiddleware
+## addMiddleware
 
 Middleware can be used to intercept any action is invoked on the subtree where it is attached. If a tree is protected \(by default\), this means that any mutation of the tree will pass through your middleware.
 
@@ -43,7 +43,7 @@ For more details, see the [middleware docs](https://mobx-state-tree.gitbook.io/d
 
 Returns **IDisposer**
 
-### applyAction
+## applyAction
 
 Applies an action or a series of actions in a single MobX transaction. Does not return any value Takes an action description as produced by the `onAction` middleware.
 
@@ -53,7 +53,7 @@ Applies an action or a series of actions in a single MobX transaction. Does not 
 * `actions` [**Array**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**&lt;IActionCall&gt;**
 * `options` **IActionCallOptions?**
 
-### applyPatch
+## applyPatch
 
 Applies a JSON-patch to the given model instance or bails out if the patch couldn't be applied See [patches](https://mobx-state-tree.gitbook.io/docs/concepts/patches) for more details.
 
@@ -64,7 +64,7 @@ Can apply a single past, or an array of patches.
 * `target` [**Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `patch` **IJsonPatch**
 
-### applySnapshot
+## applySnapshot
 
 Applies a snapshot to a given model instances. Patch and snapshot listeners will be invoked as usual.
 
@@ -73,7 +73,7 @@ Applies a snapshot to a given model instances. Patch and snapshot listeners will
 * `target` [**Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * `snapshot` [**Object**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
-### clone
+## clone
 
 Returns a deep copy of the given state tree node as new tree. Short hand for `snapshot(x) = getType(x).create(getSnapshot(x))`
 
@@ -86,7 +86,7 @@ _Tip: clone will create a literal copy, including the same identifiers. To modif
 
 Returns **T**
 
-### createActionTrackingMiddleware
+## createActionTrackingMiddleware
 
 Convenience utility to create action based middleware that supports async processes more easily. All hooks are called for both synchronous and asynchronous actions. Except that either `onSuccess` or `onFail` is called
 
@@ -100,7 +100,7 @@ See the `atomic` middleware for an example
 
 Returns **IMiddlewareHandler**
 
-### decorate
+## decorate
 
 Binds middleware to a specific action
 
@@ -128,7 +128,7 @@ type.actions(self => {
 
 Returns **any** the original function
 
-### destroy
+## destroy
 
 Removes a model element from the state tree, and mark it as end-of-life; the element should not be used anymore
 
@@ -136,7 +136,7 @@ Removes a model element from the state tree, and mark it as end-of-life; the ele
 
 * `target`
 
-### detach
+## detach
 
 Removes a model element from the state tree, and let it live on as a new state tree
 
@@ -144,7 +144,7 @@ Removes a model element from the state tree, and let it live on as a new state t
 
 * `target`
 
-### escapeJsonPath
+## escapeJsonPath
 
 escape slashes and backslashes [http://tools.ietf.org/html/rfc6901](http://tools.ietf.org/html/rfc6901)
 
@@ -152,7 +152,7 @@ escape slashes and backslashes [http://tools.ietf.org/html/rfc6901](http://tools
 
 * `str`
 
-### flow
+## flow
 
 See [asynchronous actions](https://mobx-state-tree.gitbook.io/docs/creating-asynchronous-actions).
 
@@ -162,7 +162,7 @@ See [asynchronous actions](https://mobx-state-tree.gitbook.io/docs/creating-asyn
 
 Returns [**Promise**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
-### getChildType
+## getChildType
 
 Returns the _declared_ type of the given sub property of an object, array or map.
 
@@ -182,7 +182,7 @@ console.log(getChildType(box, "x").name) // 'number'
 
 Returns **IType&lt;any, any&gt;**
 
-### getEnv
+## getEnv
 
 Returns the environment of the current state tree. For more info on environments, see [Dependency injection](https://mobx-state-tree.gitbook.io/docs/concepts/dependency-injection)
 
@@ -194,7 +194,7 @@ Returns an empty environment if the tree wasn't initialized with an environment
 
 Returns **any**
 
-### getIdentifier
+## getIdentifier
 
 Returns the identifier of the target node.
 
@@ -204,7 +204,7 @@ Returns the identifier of the target node.
 
 Returns **\(**[**string**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) **\| null\)**
 
-### getMembers
+## getMembers
 
 Returns a reflection of the node
 
@@ -214,7 +214,7 @@ Returns a reflection of the node
 
 Returns **IModelReflectionData**
 
-### getParent
+## getParent
 
 Returns the immediate parent of this object, or throws.
 
@@ -227,7 +227,7 @@ Note that the immediate parent can be either an object, map or array, and doesn'
 
 Returns **any**
 
-### getParentOfType
+## getParentOfType
 
 Returns the target's parent of a given type, or throws.
 
@@ -238,7 +238,7 @@ Returns the target's parent of a given type, or throws.
 
 Returns **any**
 
-### getPath
+## getPath
 
 Returns the path of the given object in the model tree
 
@@ -248,7 +248,7 @@ Returns the path of the given object in the model tree
 
 Returns [**string**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-### getPathParts
+## getPathParts
 
 Returns the path of the given object as unescaped string array
 
@@ -258,7 +258,7 @@ Returns the path of the given object as unescaped string array
 
 Returns [**Array**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**&lt;**[**string**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**&gt;**
 
-### getRelativePath
+## getRelativePath
 
 Given two state tree nodes that are part of the same tree, returns the shortest jsonpath needed to navigate from the one to the other
 
@@ -269,7 +269,7 @@ Given two state tree nodes that are part of the same tree, returns the shortest 
 
 Returns [**string**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-### getRoot
+## getRoot
 
 Given an object in a model tree, returns the root object of that tree
 
@@ -279,7 +279,7 @@ Given an object in a model tree, returns the root object of that tree
 
 Returns **any**
 
-### getSnapshot
+## getSnapshot
 
 Calculates a snapshot from the given model instance. The snapshot will always reflect the latest state but use structural sharing where possible. Doesn't require MobX transactions to be completed.
 
@@ -290,7 +290,7 @@ Calculates a snapshot from the given model instance. The snapshot will always re
 
 Returns **any**
 
-### getType
+## getType
 
 Returns the _actual_ type of the given tree node. \(Or throws\)
 
@@ -300,7 +300,7 @@ Returns the _actual_ type of the given tree node. \(Or throws\)
 
 Returns **IType&lt;S, T&gt;**
 
-### hasParent
+## hasParent
 
 Given a model instance, returns `true` if the object has a parent, that is, is part of another object, map or array
 
@@ -311,7 +311,7 @@ Given a model instance, returns `true` if the object has a parent, that is, is p
 
 Returns [**boolean**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
-### hasParentOfType
+## hasParentOfType
 
 Given a model instance, returns `true` if the object has a parent of given type, that is, is part of another object, map or array
 
@@ -322,11 +322,11 @@ Given a model instance, returns `true` if the object has a parent of given type,
 
 Returns [**boolean**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
-### Identifier
+## Identifier
 
-### IdentifierCache
+## IdentifierCache
 
-### isAlive
+## isAlive
 
 Returns true if the given state tree node is not killed yet. This means that the node is still a part of a tree, and that `destroy`has not been called. If a node is not alive anymore, the only thing one can do with it is requesting it's last path and snapshot
 
@@ -336,7 +336,7 @@ Returns true if the given state tree node is not killed yet. This means that the
 
 Returns [**boolean**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
-### isProtected
+## isProtected
 
 Returns true if the object is in protected mode, @see protect
 
@@ -344,7 +344,7 @@ Returns true if the object is in protected mode, @see protect
 
 * `target`
 
-### isRoot
+## isRoot
 
 Returns true if the given object is the root of a model tree
 
@@ -354,7 +354,7 @@ Returns true if the given object is the root of a model tree
 
 Returns [**boolean**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
-### isStateTreeNode
+## isStateTreeNode
 
 Returns true if the given value is a node in a state tree. More precisely, that is, if the value is an instance of a `types.model`, `types.array` or `types.map`.
 
@@ -362,7 +362,7 @@ Returns true if the given value is a node in a state tree. More precisely, that 
 
 * `value` **any**
 
-### joinJsonPath
+## joinJsonPath
 
 Generates a json-path compliant json path from path parts
 
@@ -372,9 +372,9 @@ Generates a json-path compliant json path from path parts
 
 Returns [**string**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-### ObjectNode
+## ObjectNode
 
-### onAction
+## onAction
 
 Registers a function that will be invoked for each action that is called on the provided model instance, or to any of its children. See [actions](https://mobx-state-tree.gitbook.io/docs/concepts/actions) for more details. onAction events are emitted only for the outermost called action in the stack. Action can also be intercepted by middleware using addMiddleware to change the function call before it will be run.
 
@@ -413,7 +413,7 @@ s.add({ task: "Grab a coffee" })
 
 Returns **IDisposer**
 
-### onPatch
+## onPatch
 
 Registers a function that will be invoked for each mutation that is applied to the provided model instance, or to any of its children. See [patches](https://mobx-state-tree.gitbook.io/docs/concepts/patches) for more details. onPatch events are emitted immediately and will not await the end of a transaction. Patches can be used to deep observe a model tree.
 
@@ -425,7 +425,7 @@ Registers a function that will be invoked for each mutation that is applied to t
 
 Returns **IDisposer** function to remove the listener
 
-### onSnapshot
+## onSnapshot
 
 Registers a function that is invoked whenever a new snapshot for the given model instance is available. The listener will only be fire at the and of the current MobX \(trans\)action. See [snapshots](https://mobx-state-tree.gitbook.io/docs/concepts/snapshots) for more details.
 
@@ -436,7 +436,7 @@ Registers a function that is invoked whenever a new snapshot for the given model
 
 Returns **IDisposer**
 
-### process
+## process
 
 **Parameters**
 
@@ -448,7 +448,7 @@ Returns [**Promise**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 
 * **deprecated**: has been renamed to `flow()`. See [https://github.com/mobxjs/mobx-state-tree/issues/399](https://github.com/mobxjs/mobx-state-tree/issues/399) for more information. Note that the middleware event types starting with `process` now start with `flow`.
 
-### protect
+## protect
 
 The inverse of `unprotect`
 
@@ -456,7 +456,7 @@ The inverse of `unprotect`
 
 * `target` **IStateTreeNode**
 
-### recordActions
+## recordActions
 
 Small abstraction around `onAction` and `applyAction`, attaches an action listener to a tree and records all the actions emitted. Returns an recorder object with the following signature:
 
@@ -479,7 +479,7 @@ export interface IActionRecorder {
 
 Returns **IPatchRecorder**
 
-### recordPatches
+## recordPatches
 
 Small abstraction around `onPatch` and `applyPatch`, attaches a patch listener to a tree and records all the patches. Returns an recorder object with the following signature:
 
@@ -509,7 +509,7 @@ export interface IPatchRecorder {
 
 Returns **IPatchRecorder**
 
-### resolveIdentifier
+## resolveIdentifier
 
 Resolves a model instance given a root target, the type and the identifier you are searching for. Returns undefined if no value can be found.
 
@@ -521,7 +521,7 @@ Resolves a model instance given a root target, the type and the identifier you a
 
 Returns **any**
 
-### resolvePath
+## resolvePath
 
 Resolves a path relatively to a given object. Returns undefined if no value can be found.
 
@@ -532,9 +532,9 @@ Resolves a path relatively to a given object. Returns undefined if no value can 
 
 Returns **any**
 
-### ScalarNode
+## ScalarNode
 
-### splitJsonPath
+## splitJsonPath
 
 Splits and decodes a json path into several parts
 
@@ -544,9 +544,9 @@ Splits and decodes a json path into several parts
 
 Returns [**Array**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**&lt;**[**string**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**&gt;**
 
-### StoredReference
+## StoredReference
 
-### tryResolve
+## tryResolve
 
 **Parameters**
 
@@ -555,7 +555,7 @@ Returns [**Array**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 Returns **any**
 
-### typecheck
+## typecheck
 
 Run's the typechecker on the given type. Throws if the given value is not according the provided type specification. Use this if you need typechecks even in a production build \(by default all automatic runtime type checks will be skipped in production builds\)
 
@@ -564,7 +564,7 @@ Run's the typechecker on the given type. Throws if the given value is not accord
 * `type` **IType&lt;any, any&gt;**
 * `value` **any**
 
-### types.array
+## types.array
 
 Creates an index based collection type who's children are all of a uniform declared type.
 
@@ -593,7 +593,7 @@ console.log(s.todos[0]) // prints: "Grab coffee"
 
 Returns **IComplexType&lt;**[**Array**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**&lt;S&gt;, IObservableArray&lt;T&gt;&gt;**
 
-### types.boolean
+## types.boolean
 
 Creates a type that can only contain a boolean value. This type is used for boolean values by default
 
@@ -606,11 +606,11 @@ const Thing = types.model({
 })
 ```
 
-### types.compose
+## types.compose
 
 Composes a new model from one or more existing model types. This method can be invoked in two forms: Given 2 or more model types, the types are composed into a new Type.
 
-### types.custom
+## types.custom
 
 Creates a custom type. Custom types can be used for arbitrary immutable values, that have a serializable representation. For example, to create your own Date representation, Decimal type etc.
 
@@ -660,7 +660,7 @@ const Wallet = types.model({
 })
 ```
 
-### types.Date
+## types.Date
 
 Creates a type that can only contain a javascript Date value.
 
@@ -674,7 +674,7 @@ const LogLine = types.model({
 LogLine.create({ timestamp: new Date() })
 ```
 
-### types.enumeration
+## types.enumeration
 
 Can be used to create an string based enumeration. \(note: this methods is just sugar for a union of string literals\)
 
@@ -693,7 +693,7 @@ const TrafficLight = types.model({
 
 Returns **ISimpleType&lt;**[**string**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**&gt;**
 
-### types.frozen
+## types.frozen
 
 Frozen can be used to story any value that is serializable in itself \(that is valid JSON\). Frozen values need to be immutable or treated as if immutable. They need be serializable as well. Values stored in frozen will snapshotted as-is by MST, and internal changes will not be tracked.
 
@@ -718,7 +718,7 @@ hero.location = { x: 10, y: 2 } // OK
 hero.location.x = 7 // Not ok!
 ```
 
-### types.identifier
+## types.identifier
 
 Identifiers are used to make references, lifecycle events and reconciling works. Inside a state tree, for each type can exist only one instance for each given identifier. For example there couldn't be 2 instances of user with id 1. If you need more, consider using references. Identifier can be used only as type property of a model. This type accepts as parameter the value type of the identifier field that can be either string or number.
 
@@ -737,7 +737,7 @@ const Todo = types.model("Todo", {
 
 Returns **IType&lt;T, T&gt;**
 
-### types.late
+## types.late
 
 Defines a type that gets implemented later. This is useful when you have to deal with circular dependencies. Please notice that when defining circular dependencies TypeScript isn't smart enough to inference them. You need to declare an interface to explicit the return type of the late parameter function.
 
@@ -763,7 +763,7 @@ interface INode {
 
 Returns **IType&lt;S, T&gt;**
 
-### types.literal
+## types.literal
 
 The literal type will return a type that will match only the exact given type. The given value must be a primitive, in order to be serialized to a snapshot correctly. You can use literal to match exact strings for example the exact male or female string.
 
@@ -782,7 +782,7 @@ const Person = types.model({
 
 Returns **ISimpleType&lt;S&gt;**
 
-### types.map
+## types.map
 
 Creates a key based collection type who's children are all of a uniform declared type. If the type stored in a map has an identifier, it is mandatory to store the child under that identifier in the map.
 
@@ -813,7 +813,7 @@ console.log(s.todos.get(17).task) // prints: "Grab coffee"
 
 Returns **IComplexType&lt;**[**Array**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)**&lt;S&gt;, IObservableArray&lt;T&gt;&gt;**
 
-### types.maybe
+## types.maybe
 
 Maybe will make a type nullable, and also null by default.
 
@@ -823,17 +823,17 @@ Maybe will make a type nullable, and also null by default.
 
 Returns **\(IType&lt;\(S \| null \|** [**undefined**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)**\), \(T \| null\)&gt;\)**
 
-### types.model
+## types.model
 
 Creates a new model type by providing a name, properties, volatile state and actions.
 
 See the [model type](https://mobx-state-tree.gitbook.io/docs/concepts/creating-models) description or the [getting started](https://mobx-state-tree.gitbook.io/docs/getting-started) tutorial.
 
-### types.null
+## types.null
 
 The type of the value `null`
 
-### types.number
+## types.number
 
 Creates a type that can only contain a numeric value. This type is used for numeric values by default
 
@@ -846,7 +846,7 @@ const Vector = types.model({
 })
 ```
 
-### types.optional
+## types.optional
 
 `types.optional` can be used to create a property with a default value. If the given value is not provided in the snapshot, it will default to the provided `defaultValue`. If `defaultValue` is a function, the function will be invoked for every new instance. Applying a snapshot in which the optional value is _not_ present, causes the value to be reset
 
@@ -868,7 +868,7 @@ const Todo = types.model({
 const todo = Todo.create({ title: "Get coffee "})
 ```
 
-### types.reference
+## types.reference
 
 Creates a reference to another type, which should have defined an identifier. See also the [reference and identifiers](https://mobx-state-tree.gitbook.io/docs/concepts/references-and-identifiers) section.
 
@@ -877,7 +877,7 @@ Creates a reference to another type, which should have defined an identifier. Se
 * `subType`
 * `options`
 
-### types.refinement
+## types.refinement
 
 `types.refinement(baseType, (snapshot) => boolean)` creates a type that is more specific than the base type, e.g. `types.refinement(types.string, value => value.length > 5)` to create a type of strings that can only be longer then 5.
 
@@ -888,7 +888,7 @@ Creates a reference to another type, which should have defined an identifier. Se
 
 Returns **IType&lt;T, T&gt;**
 
-### types.string
+## types.string
 
 Creates a type that can only contain a string value. This type is used for string values by default
 
@@ -901,11 +901,11 @@ const Person = types.model({
 })
 ```
 
-### types.undefined
+## types.undefined
 
 The type of the value `undefined`
 
-### types.union
+## types.union
 
 types.union\(dispatcher?, types...\) create a union of multiple types. If the correct type cannot be inferred unambiguously from a snapshot, provide a dispatcher function of the form \(snapshot\) =&gt; Type.
 
@@ -916,7 +916,7 @@ types.union\(dispatcher?, types...\) create a union of multiple types. If the co
 
 Returns **IType&lt;any, any&gt;**
 
-### unescapeJsonPath
+## unescapeJsonPath
 
 unescape slashes and backslashes
 
@@ -924,7 +924,7 @@ unescape slashes and backslashes
 
 * `str`
 
-### unprotect
+## unprotect
 
 By default it is not allowed to directly modify a model. Models can only be modified through actions. However, in some cases you don't care about the advantages \(like replayability, traceability, etc\) this yields. For example because you are building a PoC or don't have any middleware attached to your tree.
 
@@ -952,7 +952,7 @@ unprotect(todo)
 todo.done = false // OK
 ```
 
-### walk
+## walk
 
 Performs a depth first walk through a tree
 

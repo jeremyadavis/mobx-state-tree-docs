@@ -4,11 +4,11 @@ Middlewares can be attached by using:
 
 `addMiddleware(target: IStateTreeNode, handler: IMiddlewareHandler, includeHooks: boolean = true) : void`
 
-#### target
+### target
 
 the middleware will only be attached to actions of the `target` and further sub nodes of such.
 
-#### handler
+### handler
 
 An example of this is as follows:
 
@@ -38,19 +38,18 @@ const disposer = addMiddleware(store, (call, next, abort) => {
 A middleware handler receives three arguments:
 
 1. the description of the the call,
+2. a function to invoke the next middleware in the chain and manipulate the returned value from the next middleware in the chain.
+3. a function to abort the middleware queue and return a value.
 
-* a function to invoke the next middleware in the chain and manipulate the returned value from the next middleware in the chain.
-* a function to abort the middleware queue and return a value.
-
-_Note: You must call either `next(call)` or `abort(value)` within a middleware._
+_Note: You must call either_ `next(call)` _or_ `abort(value)` _within a middleware._
 
 _Note: If you abort, the action invoked will never be reached._
 
-_Note: The value from either `abort('value')` or the returned value from the `action` can be manipulated by previous middlewares._
+_Note: The value from either_ `abort('value')` _or the returned value from the_ `action` _can be manipulated by previous middlewares._
 
-_Note: It is important to invoke `next(call)` or `abort(value)` synchronously._
+_Note: It is important to invoke_ `next(call)` _or_ `abort(value)` _synchronously._
 
-_Note: The value of the `abort(value)` must be a promise in case of aborting a `flow`._
+_Note: The value of the_ `abort(value)` _must be a promise in case of aborting a_ `flow`_._
 
 **call**
 
@@ -118,11 +117,11 @@ use abort if you wan't kill the queue of middlewares and immediately return. the
 
 * `value` is returned instead of the return value from the implementation of the targeted action.
 
-#### includeHooks
+### includeHooks
 
 set this flag to `false` if you wan't to avoid having hooks passed to the middleware.
 
-### FAQ
+## FAQ
 
 * I alter a property and the change does not appear in the middleware.
 * _If you alter a value of an unprotected node, the change won't reach the middleware. Only actions can be intercepted._
