@@ -2,15 +2,11 @@
 
 [![npm version](https://badge.fury.io/js/mobx-state-tree.svg)](https://badge.fury.io/js/mobx-state-tree) [![Build Status](https://travis-ci.org/mobxjs/mobx-state-tree.svg?branch=master)](https://travis-ci.org/mobxjs/mobx-state-tree) [![Coverage Status](https://coveralls.io/repos/github/mobxjs/mobx-state-tree/badge.svg?branch=master)](https://coveralls.io/github/mobxjs/mobx-state-tree?branch=master) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/mobx-state-tree)
 
-&lt;/br&gt;
-
 ![](https://github.com/epodgaetskiy/mobx-state-tree/tree/92c5ff4b87bb3e3322a8975432c55ac1a16078d1/docs/docs/mobx-state-tree-logo-gradient.svg)
 
 **mobx-state-tree**
 
  Opinionated, transactional, MobX powered state container combining the best features of the immutable and mutable world for an optimal DX
-
-&lt;/br&gt;
 
 > Mobx and MST are amazing pieces of software, for me it is the missing brick when you build React based apps. Thanks for the great work!
 
