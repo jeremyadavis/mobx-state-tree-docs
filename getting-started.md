@@ -16,7 +16,7 @@ You can write the code for this tutorial in the browser, using the codesandbox p
 
 ### Writing code in the browser
 
-For each example you'll fine a codesandbox playground link. You can start from the playgrond of each point and manually progress to the next tutorial step by using it! If you're stuck, feel free to have a sneak peak from the next playground link! :\)
+For each example you'll find a codesandbox playground link. You can start from the playgrond of each point and manually progress to the next tutorial step by using it! If you're stuck, feel free to have a sneak peak from the next playground link! :\)
 
 ### Writing code in the editor
 
